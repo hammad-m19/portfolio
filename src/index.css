@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-ink: #0e0e0c;
+  --color-paper: #ece8df;
+  --color-accent: #8f7bff;
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+section[id] {
+  scroll-margin-top: 56px;
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Motion initial states (only when JS enabled motion and user allows it) */
+.motion [data-reveal],
+.motion [data-intro] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.motion [data-line] {
+  display: block;
+  transform: translateY(110%);
+}
+
+/* Custom cursor, fine pointers only */
+.has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+.goo { position: fixed; inset: 0; pointer-events: none; z-index: 100; filter: url(#goo); }
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.scroll-x {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(236 232 223 / 0.3) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
