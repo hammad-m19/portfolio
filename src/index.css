@@ -25,7 +25,7 @@
 @theme {
   --color-ink: #0e0e0c;
   --color-paper: #ece8df;
-  --color-accent: #8f7bff;
+  --color-accent: #c8f169;
   --font-display: 'Instrument Serif', 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 }
@@ -79,7 +79,6 @@ html.lenis, html.lenis body { height: auto; }
 
 /* Custom cursor, fine pointers only */
 .has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
-.goo { position: fixed; inset: 0; pointer-events: none; z-index: 100; filter: url(#goo); }
 .cursor-dot {
   position: fixed;
   top: 0;
@@ -90,6 +89,7 @@ html.lenis, html.lenis body { height: auto; }
   border-radius: 50%;
   background: var(--color-accent);
   pointer-events: none;
+  z-index: 100;
   will-change: transform;
 }
 

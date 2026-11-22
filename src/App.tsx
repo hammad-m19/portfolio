@@ -8,7 +8,6 @@ import { Education } from './components/Education'
 import { Contact } from './components/Contact'
 import { Preloader } from './components/Preloader'
 import { Cursor } from './components/Cursor'
-import { setupMerge } from './lib/merge'
 import { reducedMotion, startSmoothScroll, ScrollTrigger } from './lib/motion'
 
 const Projects = lazy(() => import('./components/Projects'))
@@ -22,11 +21,7 @@ export default function App() {
     const refresh = () => ScrollTrigger.refresh()
     window.addEventListener('load', refresh)
     document.fonts?.ready.then(refresh)
-    const undo = setupMerge()
-    return () => {
-      undo()
-      window.removeEventListener('load', refresh)
-    }
+    return () => window.removeEventListener('load', refresh)
   }, [])
 
   return (
