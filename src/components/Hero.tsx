@@ -23,8 +23,9 @@ export function Hero({ ready }: { ready: boolean }) {
   }, [ready])
 
   return (
-    <section id="top" ref={ref} className="flex min-h-svh items-end pt-14">
-      <div className="mx-auto grid w-full max-w-[1280px] gap-12 px-5 pb-16 pt-24 sm:px-10 lg:grid-cols-12 lg:gap-10 lg:pb-24">
+    <section id="top" ref={ref} className="relative flex min-h-svh items-end overflow-hidden pt-14">
+      <div aria-hidden className="grid-bg pointer-events-none absolute inset-0" />
+      <div className="relative mx-auto grid w-full max-w-[1280px] gap-12 px-5 pb-16 pt-24 sm:px-10 lg:grid-cols-12 lg:gap-10 lg:pb-24">
         <div className="lg:col-span-7">
           <p data-intro className="mb-6 text-xs uppercase tracking-[0.18em] text-paper/60">
             {profile.location}

@@ -7,13 +7,12 @@ export function Experience() {
   const ref = useRef<HTMLElement>(null)
   useReveal(ref)
   return (
-    <section id="experience" ref={ref} className="border-t border-paper/10 py-24 md:py-32">
+    <section id="experience" ref={ref} className="band py-24 md:py-32">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-10">
         <SectionHead index="02" label="Experience" title="Where I have worked." />
-        <ol className="mt-14 border-l border-paper/20 md:ml-[calc(41.666%-1px)] lg:mt-16">
+        <ol className="mt-14 grid gap-6 lg:mt-16 lg:grid-cols-2">
           {experience.map((job) => (
-            <li key={job.company} data-reveal className="relative pb-14 pl-7 last:pb-0 md:pl-10">
-              <span aria-hidden className="absolute -left-[5px] top-[0.7rem] h-[9px] w-[9px] bg-accent" />
+            <li key={job.company} data-reveal className="card p-7 sm:p-9">
               <p className="mb-2 text-xs uppercase tracking-[0.14em] text-paper/60">
                 {job.period} · {job.place}
               </p>

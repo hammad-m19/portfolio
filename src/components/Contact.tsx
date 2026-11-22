@@ -12,8 +12,8 @@ export function Contact() {
     { label: 'GitHub', text: 'hammad-m19', href: profile.github },
   ]
   return (
-    <section id="contact" ref={ref} className="border-t border-paper/10 pt-24 md:pt-32">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-5 sm:px-10 lg:grid-cols-12">
+    <section id="contact" ref={ref} className="pt-24 md:pt-32">
+      <div className="card mx-auto grid max-w-[1280px] gap-10 p-8 sm:p-12 lg:grid-cols-12 lg:mx-10 xl:mx-auto">
         <div className="lg:col-span-5">
           <SectionHead index="06" label="Contact" title="Get in touch." />
           <p data-reveal className="mt-6 max-w-sm text-paper/70">
@@ -23,7 +23,7 @@ export function Contact() {
             data-reveal
             data-magnetic
             href={`mailto:${profile.email}`}
-            className="mt-8 inline-block bg-accent px-7 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink"
+            className="mt-8 inline-block rounded-full bg-accent px-7 py-4 text-sm font-medium uppercase tracking-[0.12em] text-ink"
           >
             Send an email
           </a>

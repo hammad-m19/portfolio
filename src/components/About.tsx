@@ -7,7 +7,7 @@ export function About() {
   const ref = useRef<HTMLElement>(null)
   useReveal(ref)
   return (
-    <section id="about" ref={ref} className="border-t border-paper/10 py-24 md:py-32">
+    <section id="about" ref={ref} className="py-24 md:py-32">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-5 sm:px-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <SectionHead index="01" label="About" title="Short version." />
